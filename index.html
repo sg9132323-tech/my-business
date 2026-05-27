@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagar Kumar — Digital Marketing Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --gold: #F5A623;
+    --gold-light: #FFD166;
+    --blue: #0EA5E9;
+    --blue-deep: #0369A1;
+    --dark: #050810;
+    --dark-2: #0B0F1A;
+    --dark-3: #111827;
+    --dark-card: #0D1424;
+    --text-muted: #94A3B8;
+    --border: rgba(255,255,255,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: #E2E8F0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display { font-family: 'Poppins', sans-serif; }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5,8,16,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  .nav-cta {
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, var(--gold), #F97316);
+    color: #000;
+    border: none;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+  .nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(245,166,35,0.4); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(14,165,233,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 30% 80%, rgba(245,166,35,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 80% 20%, rgba(249,115,22,0.06) 0%, transparent 60%),
+      linear-gradient(180deg, #050810 0%, #080D1C 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(14,165,233,0.1);
+    border: 1px solid rgba(14,165,233,0.25);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero-badge span.dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+
+  .hero-title .accent-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-title .accent-blue {
+    background: linear-gradient(135deg, #7DD3FC, var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    max-width: 480px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--gold), #F97316);
+    color: #000;
+    border: none;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    font-family: 'Poppins', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(245,166,35,0.45);
+  }
+
+  .btn-secondary {
+    padding: 0.9rem 2rem;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    font-family: 'Poppins', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── HERO IMAGE ── */
+  .hero-image-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .hero-img-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(ellipse 60% 70% at 50% 70%, rgba(14,165,233,0.25) 0%, rgba(245,166,35,0.1) 50%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+  }
+
+  .hero-img-ring {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 1px solid rgba(14,165,233,0.15);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring-pulse 4s ease-in-out infinite;
+  }
+
+  .hero-img-ring:nth-child(2) {
+    width: 125%; height: 125%;
+    border-color: rgba(245,166,35,0.08);
+    animation-delay: 1s;
+  }
+
+  @keyframes ring-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.04); opacity: 1; }
+  }
+
+  .hero-img-container {
+    position: relative;
+    z-index: 2;
+    width: 420px;
+    max-width: 100%;
+  }
+
+  .hero-img-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow:
+      0 0 0 1px rgba(14,165,233,0.2),
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 60px rgba(14,165,233,0.15),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .hero-img-frame img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    filter: brightness(1.05) contrast(1.05);
+  }
+
+  .hero-img-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(5,8,16,0.4) 100%);
+  }
+
+  .floating-tag {
+    position: absolute;
+    background: rgba(11,15,26,0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 3;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .floating-tag.tag-1 {
+    bottom: 15%;
+    left: -12%;
+    animation-delay: 0s;
+  }
+
+  .floating-tag.tag-2 {
+    top: 20%;
+    right: -10%;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .tag-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .tag-text-main {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+  }
+  .tag-text-sub {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* ── TRUST SECTION ── */
+  .trust-section {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trust-section::before {
+    content: 'EXPERTISE';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.015);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .trust-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .trust-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #CBD5E1;
+    transition: all 0.3s;
+    cursor: default;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .trust-badge:hover {
+    background: rgba(245,166,35,0.08);
+    border-color: rgba(245,166,35,0.3);
+    color: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .trust-badge .badge-icon {
+    font-size: 1rem;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 6rem 2rem; }
+
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 540px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-frame {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    position: relative;
+  }
+
+  .about-img-frame img {
+    width: 100%;
+    display: block;
+    filter: brightness(1.05);
+  }
+
+  .about-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(14,165,233,0.1), transparent 50%, rgba(245,166,35,0.1));
+    z-index: 1;
+  }
+
+  .about-accent-box {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, var(--gold), #F97316);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 12px 40px rgba(245,166,35,0.3);
+  }
+
+  .accent-box-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000;
+    line-height: 1;
+  }
+
+  .accent-box-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(0,0,0,0.7);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about-text h2 { margin-bottom: 1.5rem; }
+
+  .about-text p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 1.025rem;
+  }
+
+  .about-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .about-pill {
+    padding: 0.4rem 1rem;
+    background: rgba(14,165,233,0.1);
+    border: 1px solid rgba(14,165,233,0.2);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: #7DD3FC;
+    font-weight: 600;
+  }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--dark-2); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    group: true;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(245,166,35,0.06), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 0;
+  }
+
+  .service-card:hover {
+    border-color: rgba(245,166,35,0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(245,166,35,0.08);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-arrow {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s;
+  }
+
+  .service-card:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── BENEFITS ── */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .benefit-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s;
+  }
+
+  .benefit-item:hover {
+    background: rgba(245,166,35,0.05);
+    border-color: rgba(245,166,35,0.2);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .benefit-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(14,165,233,0.08), transparent 60%);
+    pointer-events: none;
+  }
+
+  .form-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50%; right: -20%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(245,166,35,0.06), transparent 60%);
+    pointer-events: none;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-info h2 { margin-bottom: 1.5rem; }
+
+  .form-promises {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .promise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .promise-check {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #F97316);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #000;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .promise-text {
+    font-size: 0.95rem;
+    color: #CBD5E1;
+    line-height: 1.5;
+  }
+
+  .promise-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ── GLASS FORM ── */
+  .glass-form {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      0 0 0 1px rgba(14,165,233,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(14,165,233,0.5), rgba(245,166,35,0.5), transparent);
+  }
+
+  .form-title-glass {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .form-sub-glass {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .form-field {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94A3B8;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .form-field input,
+  .form-field select {
+    width: 100%;
+    padding: 0.875rem 1.1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.2s;
+    appearance: none;
+  }
+
+  .form-field input::placeholder { color: rgba(255,255,255,0.3); }
+
+  .form-field input:focus,
+  .form-field select:focus {
+    border-color: rgba(14,165,233,0.5);
+    background: rgba(14,165,233,0.05);
+    box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+  }
+
+  .form-field select option { background: #111827; color: #fff; }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--gold), #F97316);
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.25s;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(245,166,35,0.5);
+  }
+
+  .form-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(245,166,35,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .quote-mark {
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(245,166,35,0.15);
+    font-family: Georgia, serif;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-weight: 900;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    font-size: 0.925rem;
+    color: #CBD5E1;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .author-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 2rem;
+    background: var(--dark-2);
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(245,166,35,0.07), transparent 70%);
+  }
+
+  .cta-card {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    padding: 4rem 3rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245,166,35,0.6), transparent);
+    border-radius: 28px 28px 0 0;
+  }
+
+  .cta-card h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #030609;
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {}
+
+  .footer-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-btn {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.2s;
+    color: var(--text-muted);
+  }
+
+  .social-btn:hover {
+    background: rgba(245,166,35,0.1);
+    border-color: rgba(245,166,35,0.3);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    text-align: right;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s ease both;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.5s; }
+  .delay-5 { animation-delay: 0.7s; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-delay-6 { transition-delay: 0.6s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-image-wrap { order: -1; }
+    .hero-img-container { width: 320px; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    .form-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .floating-tag.tag-1 { left: -5%; }
+    .floating-tag.tag-2 { right: -5%; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    section { padding: 4rem 1.25rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-stats { gap: 1.5rem; }
+    .cta-card { padding: 3rem 1.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-copy { text-align: center; }
+    .footer-social { justify-content: center; }
+    .glass-form { padding: 1.75rem; }
+    .hero-img-container { width: 280px; }
+    .about-accent-box { width: 90px; height: 90px; bottom: -1rem; right: -0.75rem; }
+    .about-img-wrap { margin-bottom: 1rem; }
+    .floating-tag { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns a { text-align: center; justify-content: center; }
+    .hero-title { font-size: 2rem; }
+  }
+
+  /* Mobile hamburger placeholder for nice look */
+  .nav-menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-menu-icon span {
+    width: 22px; height: 2px;
+    background: var(--text-muted);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  @media (max-width: 768px) {
+    .nav-menu-icon { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sagar Kumar</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get Free Call</a>
+  <div class="nav-menu-icon">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge animate-fade-up delay-1">
+        <span class="dot"></span>
+        Available for New Projects
+      </div>
+      <h1 class="hero-title animate-fade-up delay-2">
+        Grow Your Business With<br>
+        <span class="accent-blue">High-Converting</span><br>
+        <span class="accent-gold">Digital Marketing</span>
+      </h1>
+      <p class="hero-sub animate-fade-up delay-3">
+        I help businesses generate quality leads, increase sales, and build a strong online presence through powerful marketing strategies.
+      </p>
+      <div class="hero-btns animate-fade-up delay-4">
+        <a href="#contact" class="btn-primary">
+          <i class="fa-solid fa-rocket"></i> Get Free Consultation
+        </a>
+        <a href="#services" class="btn-secondary">
+          Start Growing Today <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-stats animate-fade-up delay-5">
+        <div class="stat-item">
+          <div class="stat-num">150+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3x</div>
+          <div class="stat-label">Avg. Lead Growth</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24h</div>
+          <div class="stat-label">Support Response</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap animate-fade-up delay-3">
+      <div class="hero-img-glow"></div>
+      <div class="hero-img-ring"></div>
+      <div class="hero-img-ring" style="width:130%;height:130%;animation-delay:2s;border-color:rgba(245,166,35,0.06)"></div>
+      <div class="hero-img-container">
+        <div class="hero-img-frame">
+          <img src="https://i.ibb.co/x8MrM3cZ/IMG-4089.jpg" alt="Sagar Kumar — Digital Marketing Expert" loading="eager">
+        </div>
+      </div>
+      <div class="floating-tag tag-1">
+        <div class="tag-icon" style="background:rgba(34,197,94,0.15);color:#22C55E;"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div>
+          <div class="tag-text-main">+320% Leads</div>
+          <div class="tag-text-sub">E-commerce client</div>
+        </div>
+      </div>
+      <div class="floating-tag tag-2">
+        <div class="tag-icon" style="background:rgba(14,165,233,0.15);color:#0EA5E9;"><i class="fa-solid fa-bullseye"></i></div>
+        <div>
+          <div class="tag-text-main">Meta Ads</div>
+          <div class="tag-text-sub">₹2 CPL achieved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-label">Core Expertise</div>
+    <div class="trust-badges">
+      <div class="trust-badge"><span class="badge-icon">🎯</span> Lead Generation</div>
+      <div class="trust-badge"><span class="badge-icon">📘</span> Meta Ads</div>
+      <div class="trust-badge"><span class="badge-icon">🔍</span> Google Ads</div>
+      <div class="trust-badge"><span class="badge-icon">📱</span> Social Media Marketing</div>
+      <div class="trust-badge"><span class="badge-icon">🌐</span> Website Growth</div>
+      <div class="trust-badge"><span class="badge-icon">📊</span> Performance Analytics</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-frame">
+          <img src="https://i.ibb.co/x8MrM3cZ/IMG-4089.jpg" alt="Sagar Kumar">
+        </div>
+        <div class="about-accent-box">
+          <div class="accent-box-num">24</div>
+          <div class="accent-box-label">Years<br>Young</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow reveal">About Me</div>
+        <h2 class="section-title reveal reveal-delay-1">Meet<br>Sagar Kumar</h2>
+        <p class="reveal reveal-delay-2">Hi, I'm Sagar Kumar, a 24-year-old digital marketer helping businesses grow online using powerful marketing strategies and lead generation systems.</p>
+        <p class="reveal reveal-delay-3">I specialize in running high-ROI Meta and Google Ads campaigns, building organic social media presence, and creating full-funnel digital marketing systems that turn clicks into customers.</p>
+        <p class="reveal reveal-delay-3">My mission is simple — <strong style="color:#fff;">get you real, measurable results</strong> without wasting your budget. From small businesses to growing startups, I've helped brands across industries scale profitably.</p>
+        <div class="about-pills reveal reveal-delay-4">
+          <span class="about-pill">Meta Certified</span>
+          <span class="about-pill">Google Ads Expert</span>
+          <span class="about-pill">Lead Gen Specialist</span>
+          <span class="about-pill">Growth Strategist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">What I Do</div>
+      <h2 class="section-title reveal reveal-delay-1">Services That<br><span style="background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Drive Real Growth</span></h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;text-align:center;">Every service is designed with one goal — more leads, more sales, more growth for your business.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(245,166,35,0.12);">🎯</div>
+        <h3>Lead Generation</h3>
+        <p>Build automated systems that attract, nurture, and convert high-quality leads consistently — 24/7, without manual effort.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon" style="background:rgba(59,130,246,0.12);">📘</div>
+        <h3>Meta Ads</h3>
+        <p>Data-driven Facebook & Instagram ad campaigns with precision targeting, compelling creatives, and maximum ROAS.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon" style="background:rgba(34,197,94,0.12);">🔍</div>
+        <h3>Google Ads</h3>
+        <p>Capture buyers at the right moment with search, display, and shopping campaigns optimized for low CPC and high conversions.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon" style="background:rgba(236,72,153,0.12);">📸</div>
+        <h3>Instagram Growth</h3>
+        <p>Strategic content, reels, and organic growth tactics to build a loyal audience and turn followers into paying customers.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon" style="background:rgba(168,85,247,0.12);">🌐</div>
+        <h3>Website Promotion</h3>
+        <p>Drive targeted traffic to your website through SEO, paid media, and retargeting to increase visibility and conversions.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+      <div class="service-card reveal reveal-delay-5">
+        <div class="service-icon" style="background:rgba(245,166,35,0.12);">✨</div>
+        <h3>Branding</h3>
+        <p>Create a consistent, premium brand identity across all digital touchpoints that builds trust and commands attention.</p>
+        <div class="service-arrow">Learn More →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS / BENEFITS -->
+<section id="results">
+  <div class="section-inner">
+    <div style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Why Me</div>
+      <h2 class="section-title reveal reveal-delay-1">What You Can<br>Expect Working With Me</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">📈</span>
+        <h4>More Leads</h4>
+        <p>Get a consistent flow of qualified leads ready to buy your product or service.</p>
+      </div>
+      <div class="benefit-item reveal reveal-delay-1">
+        <span class="benefit-icon">💡</span>
+        <h4>Better Conversion</h4>
+        <p>Optimized funnels and messaging that turns visitors into paying customers.</p>
+      </div>
+      <div class="benefit-item reveal reveal-delay-2">
+        <span class="benefit-icon">🚀</span>
+        <h4>Business Growth</h4>
+        <p>Sustainable strategies that compound over time and scale your revenue.</p>
+      </div>
+      <div class="benefit-item reveal reveal-delay-3">
+        <span class="benefit-icon">💰</span>
+        <h4>Affordable Marketing</h4>
+        <p>Premium-quality results without the premium agency price tag.</p>
+      </div>
+      <div class="benefit-item reveal reveal-delay-4">
+        <span class="benefit-icon">⚡</span>
+        <h4>Fast Support</h4>
+        <p>Quick responses, regular updates, and transparent communication always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="form-section" id="contact">
+  <div class="section-inner">
+    <div class="form-grid">
+      <div class="form-info">
+        <div class="section-eyebrow reveal">Book a Free Call</div>
+        <h2 class="section-title reveal reveal-delay-1">Let's Build Your<br><span style="background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Growth Strategy</span></h2>
+        <p class="section-sub reveal reveal-delay-2">Fill in the form and I'll get back to you within 24 hours to discuss how I can help grow your business.</p>
+        <div class="form-promises reveal reveal-delay-3">
+          <div class="promise-item">
+            <div class="promise-check">✓</div>
+            <div class="promise-text"><strong>Free 30-minute strategy call</strong> — no obligation, just value.</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-check">✓</div>
+            <div class="promise-text"><strong>Custom marketing plan</strong> tailored to your business goals.</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-check">✓</div>
+            <div class="promise-text"><strong>100% transparent pricing</strong> — no hidden fees or surprises.</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-check">✓</div>
+            <div class="promise-text"><strong>Results-focused approach</strong> — your growth is my success.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="glass-form">
+          <div class="form-title-glass">Book Free Strategy Call 🎯</div>
+          <div class="form-sub-glass">Tell me about your business and goals</div>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-field">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your full name" required>
+            </div>
+            <div class="form-field">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+            <div class="form-field">
+              <label>Business Name</label>
+              <input type="text" placeholder="Your business / brand name" required>
+            </div>
+            <div class="form-field">
+              <label>Service Needed</label>
+              <select required>
+                <option value="" disabled selected>Select a service...</option>
+                <option>Lead Generation</option>
+                <option>Meta Ads (Facebook/Instagram)</option>
+                <option>Google Ads</option>
+                <option>Instagram Growth</option>
+                <option>Website Promotion</option>
+                <option>Branding</option>
+                <option>Full Digital Marketing Strategy</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit">
+              🚀 Book Free Strategy Call
+            </button>
+          </form>
+          <div class="form-note">🔒 Your info is 100% private. No spam, ever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Testimonials</div>
+      <h2 class="section-title reveal reveal-delay-1">What My Clients<br>Are Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Sagar completely transformed our lead generation. Within 2 months we went from 20 leads a month to over 180! His Meta Ads strategy is genuinely next level. Best investment we made for our business.</p>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;">RK</div>
+          <div>
+            <div class="author-name">Rahul Khanna</div>
+            <div class="author-title">Founder, RK Realty Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">We'd tried other agencies before and wasted lakhs. Sagar got us results in the first week. His Google Ads campaigns brought our cost per lead down by 65%. He's honest, fast, and genuinely cares about results.</p>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#10B981,#059669);color:#fff;">PS</div>
+          <div>
+            <div class="author-name">Priya Sharma</div>
+            <div class="author-title">CEO, FitLife Studio</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-4">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Our Instagram went from 2K to 28K followers in 4 months with Sagar's content and growth strategy. More importantly, sales from social media tripled. He's the real deal — young, sharp, and super dedicated.</p>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;">AM</div>
+          <div>
+            <div class="author-name">Arjun Mehta</div>
+            <div class="author-title">Owner, Mehta Jewellery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="cta-card reveal">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.25rem;">Let's Work Together</div>
+    <h2 class="section-title">Ready To Grow<br><span style="background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Your Business?</span></h2>
+    <p>Let's build your brand and generate real results. Book your free strategy call today — no commitment, just clarity.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">📞 Contact Now</a>
+      <a href="tel:7206052683" class="btn-secondary">📱 Call Directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Sagar Kumar</div>
+      <div class="footer-tagline">Digital Marketing Expert · Lead Generation Specialist</div>
+      <a href="tel:7206052683" class="footer-phone">📞 +91 72060 52683</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+      <div class="footer-social">
+        <a href="#" class="social-btn" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://wa.me/917206052683" class="social-btn" title="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 2025 Sagar Kumar · All rights reserved<br>
+      <span style="opacity:0.5;">Digital Marketing Expert</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div id="success-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);align-items:center;justify-content:center;">
+  <div style="background:var(--dark-card);border:1px solid rgba(245,166,35,0.3);border-radius:24px;padding:3rem;text-align:center;max-width:400px;margin:1rem;box-shadow:0 40px 80px rgba(0,0,0,0.6);">
+    <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">Request Received!</h3>
+    <p style="color:var(--text-muted);margin-bottom:2rem;line-height:1.6;">Thanks for reaching out! Sagar will contact you within 24 hours to schedule your free strategy call.</p>
+    <button onclick="closeModal()" style="padding:0.875rem 2rem;background:linear-gradient(135deg,var(--gold),#F97316);color:#000;border:none;border-radius:100px;font-weight:700;cursor:pointer;font-family:'Syne',sans-serif;font-size:0.95rem;">Awesome, Thanks! →</button>
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(5,8,16,0.95)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.05)';
+    } else {
+      nav.style.background = 'rgba(5,8,16,0.7)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    }
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const modal = document.getElementById('success-modal');
+    modal.style.display = 'flex';
+    e.target.reset();
+  }
+
+  function closeModal() {
+    document.getElementById('success-modal').style.display = 'none';
+  }
+
+  // Close modal on backdrop click
+  document.getElementById('success-modal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+</script>
+</body>
+</html>
